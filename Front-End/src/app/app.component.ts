@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Constsa } from './Constsa';
 
 @Component({
   selector: 'app-root',

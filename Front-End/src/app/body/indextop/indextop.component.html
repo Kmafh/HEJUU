@@ -1,0 +1,35 @@
+<div class="container mt-1">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#" class="link-warning text-decoration-none">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+              </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 d-sm-none"><img src="../../../assets/img/index.png" class="img-fluid rounded " alt="..."></div>
+        <div class="col-sm-6  ">
+            <h2 class="mt-5">{{title}}</h2>
+            <h4 class="mt-3"><P>{{body}}</P></h4>
+            <h6 class="mt-3 text-center"><P></P></h6>
+            <div class="accordion text-center" id="accordionExample">
+                    <a class="link-orange fw-bold text-decoration-none" href="" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" (click)="hability=(hability==true)?false:true">{{hability==true?'menos...':'más... '}}</a>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" *ngIf="hability==true">
+                    <div class="accordion-body text-start">
+                        <p>{{footer}}</p>
+                        <p>{{footeroption1}}</p>
+                        <p>{{footerOpton2}}</p>
+                        <p>{{footerOpton3}}</p>
+                        <p>{{footerOpton4}}</p>
+                        
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="col-sm-6 d-none d-sm-block"><img src="../../../assets/img/index.png" class="img-fluid rounded " alt="..."></div>
+    </div>
+</div>
+<app-indexbutton></app-indexbutton>
