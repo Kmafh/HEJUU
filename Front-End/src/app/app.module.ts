@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { BodyModule } from './body/body.module';
-import { Constsa } from './Constsa';
+
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,

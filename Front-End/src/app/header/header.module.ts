@@ -4,6 +4,7 @@ import { StructmenuComponent } from './structmenu/structmenu.component';
 import { CentermenuComponent } from './centermenu/centermenu.component';
 import { NadvarusertopComponent } from './nadvarusertop/nadvarusertop.component';
 import { NadvartopComponent } from './nadvartop/nadvartop.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,8 +16,12 @@ import { NadvartopComponent } from './nadvartop/nadvartop.component';
     NadvartopComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  exports:      [ StructmenuComponent  ]
+  exports:      [ 
+    StructmenuComponent, 
+    CentermenuComponent  
+  ]
 })
 export class HeaderModule { }
