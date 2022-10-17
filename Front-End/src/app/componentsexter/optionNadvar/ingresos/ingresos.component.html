@@ -1,42 +1,27 @@
-<div class="container mt-2">
+<div class="container-fluid">
 
-
-
-    <div class="row">
-        <div class="col-12 text-center"> <h2>Ingresos</h2></div>
+<div class="row bg-light text-center">
+    <div class="col-12 mt-3"><h2>Ingresos</h2></div>
+    <div class="col-12 mt-3 d-flex justify-content-center">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Fijos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Futuros</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Historial</button>
+              </li>
+          </ul>
+          
 
     </div>
-    <div class="row text-center">
-
-        <div class="col-4 border">
-            <div class="row">
-                <div class="col-12"><h3><i class="bi bi-clipboard2-data"></i> Balance</h3></div>
-                <div class="col-12"><hr></div>
-                <div class="col-12"><img src="../../../../assets/img/estadisticas.png" alt=""></div>
-               
-
-
-
-            </div>
-
-
-
-
-
-        </div>
-        <div class="col-4 border"><h3>Este mes</h3>
-            <div class="row">
-                <div class="col-12"><small>Ingreso máximo: 1300 € - Nómina</small></div>
-        <div class="col-12 mt-2"><h3>1700 € </h3></div>
-        
-
-
-            </div>
-        
-        </div>
-        
-
-        <div class="col-4 border"><h3>Futuros</h3></div>
-    </div>
-
 </div>
+</div>
+<div class="container tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+  </div>
