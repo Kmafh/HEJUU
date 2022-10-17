@@ -29,6 +29,11 @@ footer {
   background-color: #ff7f07;
   height: 5px;
 }
+.bg-celest{
+  background-color: #00afb2;
+  color: #FFFF
+}
+
 /* COLORES DE LINK */
 .link-orange{
   color: #ff7f07;
