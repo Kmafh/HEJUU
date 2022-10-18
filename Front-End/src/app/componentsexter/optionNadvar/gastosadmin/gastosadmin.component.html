@@ -1,0 +1,175 @@
+<div class="row">
+    <div class="col-12 mt-2 text-center">C.R.U.D Gastos</div>
+    <div class="col-2 border-end">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item ">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed bg-white link-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  {{nav1title}}
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse bg-light rounded" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link active link-secondary" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#fijoModal">Fijo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#eventualModal">Eventual</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#futuroModal">Futuro</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+          
+    </div>
+    <div class="col-10 border-start">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Motivo</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Cant. €</th>
+            <th scope="col">Date</th>
+            <th>
+              <button class="btn btn-white" (click)="dell=true"><i class="bi bi-check text-success" *ngIf="dell==true"></i></button>
+              
+              <button class="btn btn-white" (click)="dell=true" ><i class="bi bi-trash-fill" *ngIf="dell==false"></i></button>
+              <button class="btn btn-white" (click)="dell=false" ><i class="bi bi-x text-danger" *ngIf="dell==true"></i></button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nómina</td>
+            <td>Fijo</td>
+            <td>1300</td>
+            <td>28-12-2020</td>
+            <td ><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
+          </tr>
+          <tr>
+            <td>Bizum</td>
+            <td>Eventual</td>
+            <td>200</td>
+            <td>28-12-2020</td>
+            <td><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
+          </tr>
+          <tr>
+            <td>H.Etra</td>
+            <td>Fijo</td>
+            <td>600</td>
+            <td>28-12-2020</td>
+            <td><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>
+<!-- MODAL DE FIJOS-->
+
+<div class="modal fade" id="fijoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="eventualModalLabel">Gasto fijo</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Asunto</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Referencia">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Cantidad</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Cantidad en €">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Periodo</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="1">Mensual</option>
+            <option value="2">diario</option>
+            <option value="3">Anual</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Calcular Gasto</h6></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE EVENTUAL-->
+
+<div class="modal fade" id="eventualModal" tabindex="-1" aria-labelledby="eventualModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="eventualModalLabel">Gasto eventual</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Asunto</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Referencia">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Cantidad</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Cantidad en €">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Periodo</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="1">Mensual</option>
+            <option value="2">diario</option>
+            <option value="3">Anual</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Calcular Gasto</h6></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE FUTURO-->
+
+<div class="modal fade" id="futuroModal" tabindex="-1" aria-labelledby="futuroModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="futuroModalLabel">Gasto futuro</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Asunto</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Referencia">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Cantidad</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Cantidad en €">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Periodo</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="1">Mensual</option>
+            <option value="2">diario</option>
+            <option value="3">Anual</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Calcular Gasto</h6></a>
+      </div>
+    </div>
+  </div>
+</div>

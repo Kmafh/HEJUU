@@ -4,6 +4,10 @@ import { GastosComponent } from './optionNadvar/gastos/gastos.component';
 import { IngresosComponent } from './optionNadvar/ingresos/ingresos.component';
 import { IngresosbodyComponent } from './optionNadvar/ingresosbody/ingresosbody.component';
 import { IngresosadminComponent } from './optionNadvar/ingresosadmin/ingresosadmin.component';
+import { GastosbodyComponent } from './optionNadvar/gastosbody/gastosbody.component';
+import { GastosadminComponent } from './optionNadvar/gastosadmin/gastosadmin.component';
+import { FuturoComponent } from './optionNadvar/gastosfuturo/futuro.component';
+import { FuturoadminComponent } from './optionNadvar/futuroadmin/futuroadmin.component';
 
 
 
@@ -12,7 +16,11 @@ import { IngresosadminComponent } from './optionNadvar/ingresosadmin/ingresosadm
     IngresosComponent,
     GastosComponent,
     IngresosbodyComponent,
-    IngresosadminComponent
+    IngresosadminComponent,
+    GastosbodyComponent,
+    GastosadminComponent,
+    FuturoComponent,
+    FuturoadminComponent
   ],
   imports: [
     CommonModule

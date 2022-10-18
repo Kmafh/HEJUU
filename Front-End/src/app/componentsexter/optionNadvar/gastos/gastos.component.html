@@ -12,17 +12,20 @@
 
 <div class="row text-center">
 <div class="col-12 mt-3"><h2>Gastos</h2></div>
-<div class="col-12 "><small>Información de Gastos</small></div>
+<div class="col-12 mb-2"><small>Información de Gastos</small></div>
 <div class="col-12 mt-3 d-flex justify-content-center">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item bg-light rounded-top" role="presentation">
-        <button class="nav-link active link-menu-ingresos link-secondary" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">&nbsp;&nbsp; Fijos &nbsp;&nbsp;</button>
-      </li>
-      <li class="nav-item bg-light rounded-top " role="presentation">
-        <button class="nav-link link-menu-ingresos link-secondary" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">&nbsp;&nbsp;Futuros&nbsp;&nbsp;</button>
+        <button class="nav-link active link-menu-gastos link-secondary" id="fijo-tab" data-bs-toggle="tab" data-bs-target="#fijo-tab-pane" type="button" role="tab" aria-controls="fijo-tab-pane" aria-selected="true">&nbsp;&nbsp; Fijos &nbsp;&nbsp;</button>
       </li>
       <li class="nav-item bg-light rounded-top" role="presentation">
-          <button class="nav-link link-menu-ingresos link-secondary" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">&nbsp;&nbsp;Historial&nbsp;&nbsp;</button>
+        <button class="nav-link link-menu-gastos link-secondary" id="eventual-tab" data-bs-toggle="tab" data-bs-target="#eventual-tab-pane" type="button" role="tab" aria-controls="eventual-tab-pane" aria-selected="true">&nbsp;&nbsp; Eventuales &nbsp;&nbsp;</button>
+      </li>
+      <li class="nav-item bg-light rounded-top " role="presentation">
+        <button class="nav-link link-menu-gastos link-secondary" id="futuros-tab" data-bs-toggle="tab" data-bs-target="#futuros-tab-pane" type="button" role="tab" aria-controls="futuros-tab-pane" aria-selected="false">&nbsp;&nbsp;Futuros&nbsp;&nbsp;</button>
+      </li>
+      <li class="nav-item bg-light rounded-top" role="presentation">
+          <button class="nav-link link-menu-gastos link-secondary" id="admi-tab" data-bs-toggle="tab" data-bs-target="#admi-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">&nbsp;&nbsp;Administrar&nbsp;&nbsp;</button>
         </li>
     </ul>
 
@@ -31,70 +34,9 @@
 </div>
 </div>
 <div class="container tab-content" id="myTabContent">
-<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-  <div class="container text-center">
-
-    <div class="row">
-      <div class="col-12 mt-3">
-       <h4> Información sobre los Gastos económicos</h4>
-      </div>
-      <div class="col-12">
-        <div class="row">
-          <div class="col-md-4 border">
-            <p class="mt-3">
-            <img src="../../../../assets/img/grafico-circular.png" alt="" class="img-fluid">
-            </p>
-
-              <h3 class="mt-3">
-                2100€
-              </h3>
-
-          </div>
-          <div class="col-md-4 border">
-            <p class="mt-3">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Motivo</th>
-                    <th scope="col">Cant. €</th>
-                    <th scope="col">Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Nómina</td>
-                    <td>1300</td>
-                    <td>28-12-2020</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bizum</td>
-                    <td>200</td>
-                    <td>28-12-2020</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>H.Etra</td>
-                    <td>600</td>
-                    <td>28-12-2020</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-          <div class="col-md-4 border">
-            <p class="mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores debitis quis nostrum autem, voluptate fugit rerum placeat culpa labore adipisci officia voluptatibus vero hic. Natus sequi blanditiis sed non est.
-            </p>
-          </div>
-        </div>
-      </div>
-  </div>
-
-
+<div class="tab-pane fade show active" id="fijo-tab-pane" role="tabpanel" aria-labelledby="fijo-tab" tabindex="0">
+  <app-gastosbody></app-gastosbody>
 </div>
-<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-<div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-<div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+<div class="tab-pane fade" id="futuros-tab-pane" role="tabpanel" aria-labelledby="futuros-tab" tabindex="0"><app-futuro></app-futuro></div>
+<div class="tab-pane fade" id="admi-tab-pane" role="tabpanel" aria-labelledby="admi-tab" tabindex="0"><app-gastosadmin></app-gastosadmin></div>
 </div>
