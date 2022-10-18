@@ -23,8 +23,8 @@ footer {
     height: 40px;
   }
 /* COLORES DE FONDOS */
-.bg-pizarra{
-    background-color: #2F4F4F;
+.bg-camel{
+    background-color: #fee5ce;
 }
 .bg-orange{
   background-color: #D6680B;
@@ -35,8 +35,8 @@ footer {
   color: #FFFF
 }
 .bg-pinki{
-  background-color: #3e5974;
-  color: #FFFF
+  background-color: #ffe08c;
+  color: #D6680B;
 }
 
 /* COLORES DE LINK */
@@ -48,7 +48,7 @@ footer {
 }
 
 .boton-orange{
-  background-color: #f8973d;
+  background-color: #D6680B;
 }
 
 .boton-orange:hover{
