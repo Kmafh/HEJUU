@@ -1,1 +1,74 @@
-<p>ingresosadmin works!</p>
+<div class="row">
+    <div class="col-12 mt-2 text-center">C.R.U.D Ingresos</div>
+    <div class="col-2 border-end">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  {{nav1title}}
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Fijo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Eventual</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Futuro</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+          
+    </div>
+    <div class="col-10 border-start">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Motivo</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Cant. €</th>
+            <th scope="col">Date</th>
+            <th>
+              <button class="btn btn-white" (click)="dell=true"><i class="bi bi-check" *ngIf="dell==true"></i></button>
+              
+              <button class="btn btn-white" (click)="dell=true" ><i class="bi bi-trash-fill" *ngIf="dell==false"></i></button>
+              <button class="btn btn-white" (click)="dell=false" ><i class="bi bi-x" *ngIf="dell==true"></i></button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nómina</td>
+            <td>Fijo</td>
+            <td>1300</td>
+            <td>28-12-2020</td>
+            <td ><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
+          </tr>
+          <tr>
+            <td>Bizum</td>
+            <td>Eventual</td>
+            <td>200</td>
+            <td>28-12-2020</td>
+            <td><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
+          </tr>
+          <tr>
+            <td>H.Etra</td>
+            <td>Fijo</td>
+            <td>600</td>
+            <td>28-12-2020</td>
+            <td><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>

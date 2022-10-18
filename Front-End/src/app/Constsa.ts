@@ -32,4 +32,21 @@ export class Constsa{
         },
     }
 
+    public static NAV_OPTION_INGRESS = {
+        options1:{
+            title: "Añadir",
+            subtitle1: "Fijo",
+            subtitle2: "Eventual",
+        },
+        options2:{
+            title: "Modificar",
+            subtitle1: "Fijo",
+            subtitle2: "Eventual",
+        },
+        options3:{
+            title: "Eliminar",
+            subtitle1: "Fijo",
+            subtitle2: "Eventual",
+        },
+    }
 }

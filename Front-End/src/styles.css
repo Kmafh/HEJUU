@@ -2,6 +2,7 @@
 /* FUENTES */
 .text{
   font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .textweight{
     font-weight:100;
@@ -26,18 +27,73 @@ footer {
     background-color: #2F4F4F;
 }
 .bg-orange{
-  background-color: #ff7f07;
+  background-color: #D6680B;
   height: 5px;
 }
 .bg-celest{
   background-color: #00afb2;
   color: #FFFF
 }
+.bg-pinki{
+  background-color: #3e5974;
+  color: #FFFF
+}
 
 /* COLORES DE LINK */
 .link-orange{
-  color: #ff7f07;
+  color: #D6680B;
 }
 .link-orange:hover{
   color: #f8973d;
+}
+
+.boton-orange{
+  background-color: #f8973d;
+}
+
+.boton-orange:hover{
+  background-color: #fdae36;
+}
+/*COLORES DE TEXTO */
+
+.text-gris{
+  color: #737373
+}
+
+
+
+.myaccordion {
+  max-width: 500px;
+  margin: 50px auto;
+  box-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+ 
+.myaccordion .card,
+.myaccordion .card:last-child .card-header {
+  border: none;
+}
+ 
+.myaccordion .card-header {
+  border-bottom-color: #EDEFF0;
+  background: transparent;
+}
+ 
+.myaccordion .fa-stack {
+  font-size: 18px;
+}
+ 
+.myaccordion .btn {
+  width: 100%;
+  font-weight: bold;
+  color: #004987;
+  padding: 0;
+}
+ 
+.myaccordion .btn-link:hover,
+.myaccordion .btn-link:focus {
+  text-decoration: none;
+}
+ 
+.myaccordion li + li {
+  margin-top: 10px;
 }
