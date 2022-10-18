@@ -6,18 +6,20 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { BodyModule } from './body/body.module';
+import { ComponentsexterModule } from './componentsexter/componentsexter.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    BodyModule
+    BodyModule,
+    ComponentsexterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
