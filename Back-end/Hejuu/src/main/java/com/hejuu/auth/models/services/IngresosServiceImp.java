@@ -1,7 +1,7 @@
 package com.hejuu.auth.models.services;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +20,26 @@ public class IngresosServiceImp implements IIngresosService{
 	@Transactional(readOnly=true)
 	public List<Ingreso> findAll() {
 		return (List<Ingreso>) ingresoDao.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly=true)
+	public Ingreso findById(Long id) {
+		
+		return ingresoDao.findById(id).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Ingreso save(Ingreso ingreso) {
+		// TODO Auto-generated method stub
+		return ingresoDao.save(ingreso);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Long id) {
+		ingresoDao.deleteById(id);
+		
 	}
 }
