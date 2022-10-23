@@ -8,6 +8,8 @@ import { GastosbodyComponent } from './optionNadvar/gastosbody/gastosbody.compon
 import { GastosadminComponent } from './optionNadvar/gastosadmin/gastosadmin.component';
 import { FuturoComponent } from './optionNadvar/gastosfuturo/futuro.component';
 import { FuturoadminComponent } from './optionNadvar/futuroadmin/futuroadmin.component';
+import { AddingresoComponent } from './optionNadvar/ingresosadmin/addingreso.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,10 +22,12 @@ import { FuturoadminComponent } from './optionNadvar/futuroadmin/futuroadmin.com
     GastosbodyComponent,
     GastosadminComponent,
     FuturoComponent,
-    FuturoadminComponent
+    FuturoadminComponent,
+    AddingresoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class ComponentsexterModule { }

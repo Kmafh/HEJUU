@@ -7,6 +7,8 @@ import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { BodyModule } from './body/body.module';
 import { ComponentsexterModule } from './componentsexter/componentsexter.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ComponentsexterModule } from './componentsexter/componentsexter.module'
     AppRoutingModule,
     HeaderModule,
     BodyModule,
-    ComponentsexterModule
+    ComponentsexterModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

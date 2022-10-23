@@ -1,0 +1,22 @@
+<form (ngSubmit) = "create()">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Asunto</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Referencia" [(ngModel)]="ingreso.subject" name="subject">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Cantidad</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Cantidad en €"[(ngModel)]="ingreso.cant" name="cant">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Periodo</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="ingreso.tipe" name="tipe">
+        <option value="fijo">Mensual</option>
+        <option value="fijo">diario</option>
+        <option value="fijo">Anual</option>
+        <option value="eventual">Eventual</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-warning boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" role="button" ><h6 class="mt-2">Calcular Gasto</h6></button>
+    </div>
+</form>

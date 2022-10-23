@@ -5,20 +5,20 @@
             <div class="accordion-item ">
               <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed bg-white link-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  {{nav1title}}
+                  <i class="bi bi-bag-plus-fill"></i> {{nav1title}}
                 </button>
               </h2>
               <div id="flush-collapseOne" class="accordion-collapse collapse bg-light rounded" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                   <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link active link-secondary" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#fijoModal">Fijo</a>
+                      <a class="nav-link active link-secondary" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#fijoModal"><i class="bi bi-pencil-fill"></i> Fijo</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#eventualModal">Eventual</a>
+                      <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#eventualModal"><i class="bi bi-handbag-fill"></i> Eventual</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#futuroModal">Futuro</a>
+                      <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#futuroModal"><i class="bi bi-binoculars-fill"></i> Futuro</a>
                     </li>
                   </ul>
                 </div>
@@ -46,26 +46,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Nómina</td>
-            <td>Fijo</td>
-            <td>1300</td>
-            <td>28-12-2020</td>
-            <td ><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
-          </tr>
-          <tr>
-            <td>Bizum</td>
-            <td>Eventual</td>
-            <td>200</td>
-            <td>28-12-2020</td>
-            <td><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
-          </tr>
-          <tr>
-            <td>H.Etra</td>
-            <td>Fijo</td>
-            <td>600</td>
-            <td>28-12-2020</td>
-            <td><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
+          <tr *ngFor="let ingresos of ingreso" class="text-success">
+            <td>{{ingresos.subject}}</td>
+            <td>{{ingresos.tipe}}</td>
+            <td>{{ingresos.cant}}</td>
+            <td>{{ingresos.create_at}}</td>
           </tr>
         </tbody>
       </table>
@@ -82,26 +67,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label">Asunto</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Referencia">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Cantidad</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Cantidad en €">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Periodo</label>
-          <select class="form-select" aria-label="Default select example">
-            <option value="1">Mensual</option>
-            <option value="2">diario</option>
-            <option value="3">Anual</option>
-          </select>
-        </div>
+        <app-addingreso></app-addingreso>
       </div>
-      <div class="modal-footer">
-        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Calcular Gasto</h6></a>
-      </div>
+     
     </div>
   </div>
 </div>
@@ -116,22 +84,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label">Asunto</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Referencia">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Cantidad</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Cantidad en €">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Periodo</label>
-          <select class="form-select" aria-label="Default select example">
-            <option value="1">Mensual</option>
-            <option value="2">diario</option>
-            <option value="3">Anual</option>
-          </select>
-        </div>
+        <app-addingreso></app-addingreso>
       </div>
       <div class="modal-footer">
         <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Calcular Gasto</h6></a>

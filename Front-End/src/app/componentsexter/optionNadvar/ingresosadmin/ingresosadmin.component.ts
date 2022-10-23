@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Constsa } from 'src/app/Constsa';
+import { Ingreso } from '../ingresos/ingreso';
+import { IngresosbodyService } from '../ingresosbody/ingresosbody.service';
 
 @Component({
   selector: 'app-ingresosadmin',
@@ -7,12 +9,15 @@ import { Constsa } from 'src/app/Constsa';
 })
 export class IngresosadminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ingresoService: IngresosbodyService) { }
   dell:boolean=false;
   nav1title: String=Constsa.NAV_OPTION_INGRESS.options1.title;
   nav2title: String=Constsa.NAV_OPTION_INGRESS.options2.title;
   nav3title: String=Constsa.NAV_OPTION_INGRESS.options3.title;
+  ingreso: Ingreso[] = [];
   ngOnInit(): void {
+    this.ingresoService.getIngresos().subscribe(
+      ingreso => this.ingreso=ingreso)
   }
 
 }

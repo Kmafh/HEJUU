@@ -46,26 +46,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Nómina</td>
-            <td>Fijo</td>
-            <td>1300</td>
-            <td>28-12-2020</td>
-            <td ><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
-          </tr>
-          <tr>
-            <td>Bizum</td>
-            <td>Eventual</td>
-            <td>200</td>
-            <td>28-12-2020</td>
-            <td><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
-          </tr>
-          <tr>
-            <td>H.Etra</td>
-            <td>Fijo</td>
-            <td>600</td>
-            <td>28-12-2020</td>
-            <td><input class="form-check-input ms-5" type="checkbox" value="" id="flexCheckDefault" *ngIf="dell==true"></td>
+          <tr *ngFor="let gastos of gasto">
+            <td>{{gastos.subject}}</td>
+            <td>{{gastos.tipe}}</td>
+            <td>{{gastos.cant}}</td>
+            <td>{{gastos.create_at}}</td>
           </tr>
         </tbody>
       </table>
