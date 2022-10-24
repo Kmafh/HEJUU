@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Constsa } from 'src/app/Constsa';
+import swal from 'sweetalert2';
 import { Ingreso } from '../ingresos/ingreso';
 import { IngresosbodyService } from '../ingresosbody/ingresosbody.service';
 
@@ -19,5 +20,27 @@ export class IngresosadminComponent implements OnInit {
     this.ingresoService.getIngresos().subscribe(
       ingreso => this.ingreso=ingreso)
   }
-
+  delete(ingreso:Ingreso):void{
+    swal({
+      title: 'Estás seguro?',
+      text: "No podrás revertirlo!",
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+      if (result.value) {
+          this.ingresoService.delete(ingreso.id).subscribe(
+            response => {
+              this.ingreso=this.ingreso.filter(cli => cli !== ingreso)
+              swal(
+                'Eliminado!',
+                `Ingreso ${ingreso.subject} ha sido eliminado.`,
+                'success'
+              )
+            })
+          }
+             
+    })
+  }
 }

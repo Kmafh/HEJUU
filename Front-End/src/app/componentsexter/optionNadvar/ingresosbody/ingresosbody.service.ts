@@ -22,4 +22,10 @@ export class IngresosbodyService {
   getIngreso(id:number): Observable<Ingreso>{
     return this.http.get<Ingreso>( `${this.urlEndPoint}/${id}`);
   }
+  update(ingreso:Ingreso) : Observable<Ingreso>{
+    return this.http.put<Ingreso>( `${this.urlEndPoint}/${ingreso.id}`,ingreso , {headers:this.httpHearders});
+  }
+  delete(id:number): Observable<Ingreso>{
+    return this.http.delete<Ingreso>( `${this.urlEndPoint}/${id}`,{headers:this.httpHearders});
+  }
 }

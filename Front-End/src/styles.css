@@ -27,7 +27,7 @@ footer {
     background-color: #fee5ce;
 }
 .bg-orange{
-  background-color: #D6680B;
+  background-color: #f48124;
   height: 5px;
 }
 .bg-celest{
@@ -41,14 +41,14 @@ footer {
 
 /* COLORES DE LINK */
 .link-orange{
-  color: #D6680B;
+  color: #f48124;
 }
 .link-orange:hover{
   color: #f8973d;
 }
 
 .boton-orange{
-  background-color: #D6680B;
+  background-color: #f48124;
 }
 
 .boton-orange:hover{

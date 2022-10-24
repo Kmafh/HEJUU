@@ -2,16 +2,13 @@ package com.hejuu.models.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,12 +29,21 @@ public class Ingreso implements Serializable{
 	@Column(name="create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private Usuario usuarios;
+	@Column(name="usuarios_id")
+	private Long usuarios_id;
 	
 	
 	
 	
+	public Long getUsuarios_id() {
+		return usuarios_id;
+	}
+	public void setUsuarios_id(Long usuarios_id) {
+		this.usuarios_id = usuarios_id;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	public Long getId() {
 		return id;
 	}

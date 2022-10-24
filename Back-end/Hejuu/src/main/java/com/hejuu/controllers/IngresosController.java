@@ -52,7 +52,7 @@ public class IngresosController {
 		ingresoActual.setCreateAt(ingreso.getCreateAt());
 		ingresoActual.setSubject(ingreso.getSubject());
 		ingresoActual.setTipe(ingreso.getTipe());
-		
+		ingresoActual.setUsuarios_id((long) 1);
 		return ingresoService.save(ingresoActual);
 	}
 	

@@ -37,8 +37,15 @@ export class AddingresoComponent implements OnInit {
     this.ingresoService.create(this.ingreso)
     .subscribe(INGRESO =>{
       this.router.navigate(['/ingresos'])
-      swal('Nuevo Ingreso','Has ingresado ${ingreso.subject} con éxito','success')
+      swal('Nuevo Ingreso',`Has ingresado ${this.ingreso.subject} con éxito`,'success')
     }
     )
+  }
+  update():void{
+    this.ingresoService.update(this.ingreso)
+    .subscribe( ingreso => {
+      this.router.navigate(['/ingresos'])
+      swal('Ingreso Actualizado',`Ingreso ${ingreso.subject} actualizado con éxito`,'success')
+  })
   }
 }

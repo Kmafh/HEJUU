@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-12 mt-2 text-center">C.R.U.D Ingresos</div>
-    <div class="col-2 border-end">
+    <div class="col-12 col-md-2 border-end">
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item ">
               <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed bg-white link-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  <i class="bi bi-bag-plus-fill"></i> {{nav1title}}
+                  <i class="bi bi-bag-plus-fill"></i>&nbsp; {{nav1title}}
                 </button>
               </h2>
               <div id="flush-collapseOne" class="accordion-collapse collapse bg-light rounded" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -38,10 +38,7 @@
             <th scope="col">Cant. €</th>
             <th scope="col">Date</th>
             <th>
-              <button class="btn btn-white" (click)="dell=true"><i class="bi bi-check text-success" *ngIf="dell==true"></i></button>
               
-              <button class="btn btn-white" (click)="dell=true" ><i class="bi bi-trash-fill" *ngIf="dell==false"></i></button>
-              <button class="btn btn-white" (click)="dell=false" ><i class="bi bi-x text-danger" *ngIf="dell==true"></i></button>
             </th>
           </tr>
         </thead>
@@ -51,6 +48,8 @@
             <td>{{ingresos.tipe}}</td>
             <td>{{ingresos.cant}}</td>
             <td>{{ingresos.create_at}}</td>
+            <td><button class="btn btn-white" href="#" data-bs-toggle="modal" data-bs-target="#fijoModal" (click) ="update(ingresos)" ><i class="bi bi-hammer"></i></button>
+              <button class="btn btn-white" (click) ="delete(ingresos)" ><i class="bi bi-trash-fill" ></i></button></td>
           </tr>
         </tbody>
       </table>

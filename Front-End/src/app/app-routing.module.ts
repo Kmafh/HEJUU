@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: IndextopComponent },
   { path: 'ingresos', component: IngresosComponent },
   { path: 'gastos', component: GastosComponent },
-  { path: 'ingresos/add', component: AddingresoComponent }
+  { path: 'ingresos/add/:id', component: AddingresoComponent }
 ];
 
 @NgModule({
