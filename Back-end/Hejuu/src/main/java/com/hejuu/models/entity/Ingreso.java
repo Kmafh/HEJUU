@@ -21,9 +21,9 @@ public class Ingreso implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(unique=true,length=30)
+	@Column(nullable=false, unique=true,length=30)
 	private String subject;
-	@Column(length=10)
+	@Column(nullable=false, length=10)
 	private String tipe;
 	private Long cant;
 	@Column(name="create_at")

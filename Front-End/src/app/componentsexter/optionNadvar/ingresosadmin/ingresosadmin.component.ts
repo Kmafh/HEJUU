@@ -3,19 +3,23 @@ import { Constsa } from 'src/app/Constsa';
 import swal from 'sweetalert2';
 import { Ingreso } from '../ingresos/ingreso';
 import { IngresosbodyService } from '../ingresosbody/ingresosbody.service';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-ingresosadmin',
   templateUrl: './ingresosadmin.component.html'
 })
 export class IngresosadminComponent implements OnInit {
+  _router: any;
+  _location: any;
 
-  constructor(private ingresoService: IngresosbodyService) { }
+  constructor(private ingresoService: IngresosbodyService,private router: Router) { }
   dell:boolean=false;
+  upd:boolean=false;
   nav1title: String=Constsa.NAV_OPTION_INGRESS.options1.title;
   nav2title: String=Constsa.NAV_OPTION_INGRESS.options2.title;
   nav3title: String=Constsa.NAV_OPTION_INGRESS.options3.title;
   ingreso: Ingreso[] = [];
+  
   ngOnInit(): void {
     this.ingresoService.getIngresos().subscribe(
       ingreso => this.ingreso=ingreso)
@@ -42,5 +46,10 @@ export class IngresosadminComponent implements OnInit {
           }
              
     })
+    
+  }
+  
+  refresk(): void {
+    window.location.reload();
   }
 }

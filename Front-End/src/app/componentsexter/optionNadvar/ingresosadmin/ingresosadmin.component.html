@@ -1,60 +1,98 @@
 <div class="row">
-    <div class="col-12 mt-2 text-center">C.R.U.D Ingresos</div>
-    <div class="col-12 col-md-2 border-end">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item ">
-              <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed bg-white link-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  <i class="bi bi-bag-plus-fill"></i>&nbsp; {{nav1title}}
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse bg-light rounded" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  <ul class="nav flex-column">
-                    <li class="nav-item">
-                      <a class="nav-link active link-secondary" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#fijoModal"><i class="bi bi-pencil-fill"></i> Fijo</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#eventualModal"><i class="bi bi-handbag-fill"></i> Eventual</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#futuroModal"><i class="bi bi-binoculars-fill"></i> Futuro</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-            </div>
-            
+  <div class="col-12 mt-2 text-center">C.R.U.D Ingresos</div>
+  <div class="col-12 col-md-2 border-end">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item ">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed bg-white link-secondary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <i class="bi bi-bag-plus-fill"></i>&nbsp; {{nav1title}}
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse bg-light rounded"
+          aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#fijoModal"><i
+                    class="bi bi-pencil-fill"></i> Fijo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#eventualModal"><i
+                    class="bi bi-handbag-fill"></i> Eventual</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-secondary" href="#" data-bs-toggle="modal" data-bs-target="#futuroModal"><i
+                    class="bi bi-binoculars-fill"></i> Futuro</a>
+              </li>
+            </ul>
           </div>
-          
+        </div>
+
+      </div>
+
     </div>
-    <div class="col-10 border-start">
-      <table class="table table-hover">
+
+  </div>
+  <div class="col-10 border-start">
+    <div *ngIf="upd==true" class="">
+      <table class="table table-hover" *ngIf="ingreso?.length>0">
         <thead>
           <tr>
-            <th scope="col">Motivo</th>
+            <th scope="col text-white">Motivo</th>
             <th scope="col">Tipo</th>
             <th scope="col">Cant. €</th>
-            <th scope="col">Date</th>
-            <th>
-              
-            </th>
+            
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ingresos of ingreso" class="text-success">
-            <td>{{ingresos.subject}}</td>
-            <td>{{ingresos.tipe}}</td>
-            <td>{{ingresos.cant}}</td>
-            <td>{{ingresos.create_at}}</td>
-            <td><button class="btn btn-white" href="#" data-bs-toggle="modal" data-bs-target="#fijoModal" (click) ="update(ingresos)" ><i class="bi bi-hammer"></i></button>
-              <button class="btn btn-white" (click) ="delete(ingresos)" ><i class="bi bi-trash-fill" ></i></button></td>
+          <tr class="text-success" (click)="upd=true">
+            <td><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></td>
+            <td><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></td>
+            <td><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></td>
+            <td>
+              <button class="btn btn-white" (click)="upd=false"><h5><i class="bi bi-x-lg"></i></h5></button>
+            </td>
           </tr>
+    
         </tbody>
       </table>
-    </div>
+      <div class="border-bottom">
+        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly mb-4" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Editar</h6></a>                
 
+      </div>
+        
+
+          
+       
+      
+  </div>
+  <table class="table table-hover " *ngIf="ingreso?.length>0">
+    <thead>
+      <tr>
+        <th scope="col">Motivo</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Cant. €</th>
+        <th scope="col">Date</th>
+        <th>
+
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ingresos of ingreso" class="text-success" (click)="upd=true">
+        <td>{{ingresos.subject}}</td>
+        <td>{{ingresos.tipe}}</td>
+        <td>{{ingresos.cant}}</td>
+        <td>{{ingresos.create_at}}</td>
+        <td>
+          <button class="btn btn-white" (click)="delete(ingresos)"><i class="bi bi-trash-fill"></i></button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <div *ngIf="ingreso?.length== 0" class="alert alert-info mt-3"> No hay ingresos registrados</div>
 </div>
 <!-- MODAL DE FIJOS-->
 
@@ -63,12 +101,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="eventualModalLabel">Ingreso fijo</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click) ="refresk()"></button>
       </div>
       <div class="modal-body">
         <app-addingreso></app-addingreso>
       </div>
-     
+
     </div>
   </div>
 </div>
@@ -86,7 +124,10 @@
         <app-addingreso></app-addingreso>
       </div>
       <div class="modal-footer">
-        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Calcular Gasto</h6></a>
+        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton"
+          type="button" data-bs-toggle="modal" data-bs-target="#consumoModal">
+          <h6 class="mt-2">Calcular Gasto</h6>
+        </a>
       </div>
     </div>
   </div>
@@ -120,7 +161,10 @@
         </div>
       </div>
       <div class="modal-footer">
-        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Calcular Gasto</h6></a>
+        <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton"
+          type="button" data-bs-toggle="modal" data-bs-target="#consumoModal">
+          <h6 class="mt-2">Calcular Gasto</h6>
+        </a>
       </div>
     </div>
   </div>

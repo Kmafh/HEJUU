@@ -1,5 +1,7 @@
 
 export class Constsa{
+    public static LOGIN:boolean=true;
+    
     public static WELLCOME = {
         id:1,
         title: "Gestión economía doméstica.",

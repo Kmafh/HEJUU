@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Constsa } from 'src/app/Constsa';
 
 @Component({
   selector: 'app-structmenu',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StructmenuComponent implements OnInit {
 
+  login:boolean=Constsa.LOGIN;
+  User:string="Kamaflash"
   constructor() { }
 
   ngOnInit(): void {

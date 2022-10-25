@@ -10,6 +10,7 @@ import { FuturoComponent } from './optionNadvar/gastosfuturo/futuro.component';
 import { FuturoadminComponent } from './optionNadvar/futuroadmin/futuroadmin.component';
 import { AddingresoComponent } from './optionNadvar/ingresosadmin/addingreso.component';
 import { FormsModule } from '@angular/forms';
+import { ExtraModule } from '../extra/extra.module';
 
 
 
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ExtraModule
   ]
 })
 export class ComponentsexterModule { }

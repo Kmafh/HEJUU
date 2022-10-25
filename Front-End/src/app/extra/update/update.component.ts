@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Ingreso } from 'src/app/componentsexter/optionNadvar/ingresos/ingreso';
+import { IngresosbodyService } from 'src/app/componentsexter/optionNadvar/ingresosbody/ingresosbody.service';
 import swal from 'sweetalert2';
-import { Ingreso } from '../ingresos/ingreso';
-import { IngresosbodyService } from '../ingresosbody/ingresosbody.service';
 
 @Component({
-  selector: 'app-addingreso',
-  templateUrl: './addingreso.component.html'
+  selector: 'app-update',
+  templateUrl: './update.component.html',
+  styleUrls: ['./update.component.css']
 })
-export class AddingresoComponent implements OnInit {
-
+export class UpdateComponent implements OnInit {
   public ingreso: Ingreso= new Ingreso();
 
   constructor(private ingresoService: IngresosbodyService, private router: Router, private activateRoute: ActivatedRoute) { }
