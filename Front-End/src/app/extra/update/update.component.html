@@ -1,16 +1,29 @@
 <div class="container">
-    <form >
+    <form #IngresoForms="ngForm">
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Asunto</label>
-            <input type="text" class="form-control" id="formGroupExampleInput"  [(ngModel)]="ingreso.subject" name="subject">
+            <input type="text" class="form-control" id="formGroupExampleInput"  [(ngModel)]="ingreso.subject" name="subject" required minlength="4" #subject="ngModel">
+            <div class="alert alert-danger" *ngIf="subject.invalid && (subject.dirty || subject.touched)">
+                <div *ngIf=" subject.errors.required">
+                    Asunto es requerido
+                </div>
+                <div *ngIf=" subject.errors.minlength">
+                    Es necesario introducir un asunto de almenos 4 caracteres
+                </div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput2" class="form-label">Cantidad</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" [(ngModel)]="ingreso.cant" name="cant">
+            <input type="text" class="form-control" id="formGroupExampleInput2" [(ngModel)]="ingreso.cant" name="cant" required #cant="ngModel">
+            <div class="alert alert-danger" *ngIf="cant.invalid && (cant.dirty)">
+                <div *ngIf="cant.errors.required">
+                    Cantidad es requerida
+                </div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput2" class="form-label">Periodo</label>
-            <select class="form-select" aria-label="Default select example" [(ngModel)]="ingreso.tipe" name="tipe">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="ingreso.tipe" name="tipe" required>
             <option value="fijo">Mensual</option>
             <option value="fijo">diario</option>
             <option value="fijo">Anual</option>
@@ -19,7 +32,7 @@
         </div>
         <div class="mb-3">
             <button class="btn btn-warning boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" 
-            role="button" (click) ="create()" *ngIf="!ingreso.id else elseBlock">
+            role="button" (click) ="create()" *ngIf="!ingreso.id else elseBlock" [disabled] ="!IngresoForms.form.valid">
             <h6 class="mt-2">Añadir</h6></button>
         </div>
         <ng-template #elseBlock>

@@ -1,3 +1,4 @@
+import { DatePipe, formatDate } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -15,7 +16,16 @@ export class IngresosbodyService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getIngresos(): Observable<Ingreso[]>{
-    return this.http.get<Ingreso[]>( this.urlEndPoint);
+    return this.http.get( this.urlEndPoint).pipe(
+      map(response => {
+        let ingresos = response as Ingreso[];
+        return ingresos.map(ingreso => {
+          let datePipe = new DatePipe('en-US');
+          ingreso.create_at=datePipe.transform(ingreso.create_at, 'dd/MM/yyyy');
+          return ingreso;
+        })
+      })
+    );
   }
   create(ingreso:Ingreso) : Observable<any>{
     return this.http.post<Ingreso>(this.urlEndPoint, ingreso , {headers:this.httpHearders}).pipe(

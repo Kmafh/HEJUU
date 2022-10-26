@@ -2,8 +2,6 @@ package com.hejuu.models.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="ingresos")
@@ -21,10 +22,14 @@ public class Ingreso implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotEmpty(message = "no puede estar vacio")
+	@Size(min=4,max=20)
 	@Column(nullable=false, unique=true,length=30)
 	private String subject;
+	@NotEmpty(message = "no puede estar vacio")
 	@Column(nullable=false, length=10)
 	private String tipe;
+	@NotNull(message = "no puede estar vacio")
 	private Long cant;
 	@Column(name="create_at")
 	@Temporal(TemporalType.DATE)

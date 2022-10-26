@@ -28,11 +28,8 @@
             </ul>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
   <div class="col-10 border-start">
     <div *ngIf="upd==true" class="">
@@ -42,7 +39,6 @@
             <th scope="col text-white">Motivo</th>
             <th scope="col">Tipo</th>
             <th scope="col">Cant. €</th>
-            
           </tr>
         </thead>
         <tbody>
@@ -54,18 +50,11 @@
               <button class="btn btn-white" (click)="upd=false"><h5><i class="bi bi-x-lg"></i></h5></button>
             </td>
           </tr>
-    
         </tbody>
       </table>
       <div class="border-bottom">
         <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly mb-4" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Editar</h6></a>                
-
       </div>
-        
-
-          
-       
-      
   </div>
   <table class="table table-hover " *ngIf="ingreso?.length>0">
     <thead>
@@ -89,11 +78,15 @@
           <button class="btn btn-white" (click)="delete(ingresos)"><i class="bi bi-trash-fill"></i></button>
         </td>
       </tr>
-
     </tbody>
   </table>
   <div *ngIf="ingreso?.length== 0" class="alert alert-info mt-3"> No hay ingresos registrados</div>
 </div>
+<mat-paginator [length]="totalRegistros"
+              [pageSize]="totalPorPagina"
+              [pageIndex]="paginaActual"
+              [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>
 <!-- MODAL DE FIJOS-->
 
 <div class="modal fade" id="fijoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

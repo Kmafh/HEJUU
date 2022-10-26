@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,AfterViewInit, ViewChild} from '@angular/core';
 import { Constsa } from 'src/app/Constsa';
 import swal from 'sweetalert2';
 import { Ingreso } from '../ingresos/ingreso';
 import { IngresosbodyService } from '../ingresosbody/ingresosbody.service';
 import {Router} from '@angular/router';
+
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+
 @Component({
   selector: 'app-ingresosadmin',
   templateUrl: './ingresosadmin.component.html'
@@ -19,7 +23,11 @@ export class IngresosadminComponent implements OnInit {
   nav2title: String=Constsa.NAV_OPTION_INGRESS.options2.title;
   nav3title: String=Constsa.NAV_OPTION_INGRESS.options3.title;
   ingreso: Ingreso[] = [];
-  
+
+  totalRegistros=0;
+  totalPorPagina=0;
+  paginaActual=0;
+  pageSizeOptions:number[]=[5, 10, 25, 100]
   ngOnInit(): void {
     this.ingresoService.getIngresos().subscribe(
       ingreso => this.ingreso=ingreso)

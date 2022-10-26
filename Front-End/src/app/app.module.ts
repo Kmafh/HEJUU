@@ -9,7 +9,8 @@ import { BodyModule } from './body/body.module';
 import { ComponentsexterModule } from './componentsexter/componentsexter.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     BodyModule,
     ComponentsexterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

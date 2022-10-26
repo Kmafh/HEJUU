@@ -11,6 +11,7 @@ import { FuturoadminComponent } from './optionNadvar/futuroadmin/futuroadmin.com
 import { AddingresoComponent } from './optionNadvar/ingresosadmin/addingreso.component';
 import { FormsModule } from '@angular/forms';
 import { ExtraModule } from '../extra/extra.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -29,7 +30,8 @@ import { ExtraModule } from '../extra/extra.module';
   imports: [
     CommonModule,
     FormsModule,
-    ExtraModule
+    ExtraModule,
+    MatPaginatorModule
   ]
 })
 export class ComponentsexterModule { }

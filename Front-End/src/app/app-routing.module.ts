@@ -8,8 +8,8 @@ import { UpdateComponent } from './extra/update/update.component';
 const routes: Routes = [
   { path: '', component: IndextopComponent },
   { path: 'ingresos', component: IngresosComponent },
-  { path: 'gastos', component: GastosComponent }
-  { path: 'update', component: UpdateComponent }
+  { path: 'gastos', component: GastosComponent },
+  { path: 'update', component: UpdateComponent },
 ];
 
 @NgModule({
