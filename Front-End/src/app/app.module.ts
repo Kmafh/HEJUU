@@ -17,20 +17,20 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
   declarations: [
     AppComponent,
     FooterComponent,
-    ProyectosComponent,
-
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
     BodyModule,
-    ComponentsexterModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
     MatPaginatorModule
-
+  ],
+  exports: [
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

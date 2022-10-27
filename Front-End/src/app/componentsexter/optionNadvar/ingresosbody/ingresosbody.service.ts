@@ -16,7 +16,7 @@ export class IngresosbodyService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getIngresos(page:number): Observable<any> {
-    return this.http.get(this.urlEndPoint+ '/page/'+page)
+    return this.http.get(this.urlEndPoint+'/page/'+page)
     .pipe(
       tap((response: any) => {
         console.log('ClienteService: tap1');

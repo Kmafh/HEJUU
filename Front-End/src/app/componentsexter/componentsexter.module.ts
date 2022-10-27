@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ExtraModule } from '../extra/extra.module';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { RouterModule } from '@angular/router';
+import { PaginatorComponent } from '../paginator/paginator.component';
 
 
 
@@ -26,14 +27,16 @@ import { RouterModule } from '@angular/router';
     GastosadminComponent,
     FuturoComponent,
     FuturoadminComponent,
-    AddingresoComponent
+    AddingresoComponent,
+    PaginatorComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ExtraModule,
     MatPaginatorModule,
-    RouterModule
+    RouterModule,
+    
   ]
 })
 export class ComponentsexterModule { }

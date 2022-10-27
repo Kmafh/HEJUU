@@ -1,7 +1,6 @@
 package com.hejuu.auth.models.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,6 +23,7 @@ public class IngresosServiceImp implements IIngresosService{
 		return (List<Ingreso>) ingresoDao.findAll();
 	}
 	@Override
+	@Transactional(readOnly=true)
 	public Page<Ingreso> findAll(Pageable pageable) {
 		// TODO Auto-generated method stub
 		return ingresoDao.findAll(pageable);
