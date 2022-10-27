@@ -82,11 +82,6 @@
   </table>
   <div *ngIf="ingreso?.length== 0" class="alert alert-info mt-3"> No hay ingresos registrados</div>
 </div>
-<mat-paginator [length]="totalRegistros"
-              [pageSize]="totalPorPagina"
-              [pageIndex]="paginaActual"
-              [pageSizeOptions]="pageSizeOptions">
-</mat-paginator>
 <!-- MODAL DE FIJOS-->
 
 <div class="modal fade" id="fijoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

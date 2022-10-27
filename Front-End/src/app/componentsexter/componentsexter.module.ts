@@ -12,6 +12,7 @@ import { AddingresoComponent } from './optionNadvar/ingresosadmin/addingreso.com
 import { FormsModule } from '@angular/forms';
 import { ExtraModule } from '../extra/extra.module';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -31,7 +32,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     CommonModule,
     FormsModule,
     ExtraModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    RouterModule
   ]
 })
 export class ComponentsexterModule { }

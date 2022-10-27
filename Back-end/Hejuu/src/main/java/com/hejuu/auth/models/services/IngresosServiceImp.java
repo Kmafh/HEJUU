@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +23,12 @@ public class IngresosServiceImp implements IIngresosService{
 	public List<Ingreso> findAll() {
 		return (List<Ingreso>) ingresoDao.findAll();
 	}
-
+	@Override
+	public Page<Ingreso> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return ingresoDao.findAll(pageable);
+	}
+	
 	@Override
 	@Transactional(readOnly=true)
 	public Ingreso findById(Long id) {
@@ -42,4 +49,6 @@ public class IngresosServiceImp implements IIngresosService{
 		ingresoDao.deleteById(id);
 		
 	}
+
+	
 }

@@ -9,6 +9,7 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
 const routes: Routes = [
   { path: '', component: IndextopComponent },
   { path: 'ingresos', component: IngresosComponent },
+  { path: 'ingresos/page/{page}', component: IngresosComponent },
   { path: 'gastos', component: GastosComponent },
   { path: 'update', component: UpdateComponent },
   { path: 'proyectos', component: ProyectosComponent }
