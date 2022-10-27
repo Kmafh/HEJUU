@@ -4,12 +4,14 @@ import { IndextopComponent } from './body/indextop/indextop.component';
 import { GastosComponent } from './componentsexter/optionNadvar/gastos/gastos.component';
 import { IngresosComponent } from './componentsexter/optionNadvar/ingresos/ingresos.component';
 import { UpdateComponent } from './extra/update/update.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
 
 const routes: Routes = [
   { path: '', component: IndextopComponent },
   { path: 'ingresos', component: IngresosComponent },
   { path: 'gastos', component: GastosComponent },
   { path: 'update', component: UpdateComponent },
+  { path: 'proyectos', component: ProyectosComponent }
 ];
 
 @NgModule({

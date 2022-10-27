@@ -3,12 +3,11 @@ import { Constsa } from '../../Constsa';
 
 @Component({
   selector: 'app-indextop',
-  templateUrl: './indextop.component.html',
-  styleUrls: ['./indextop.component.css']
+  templateUrl: './indextop.component.html'
 })
 export class IndextopComponent implements OnInit {
 
-  
+
   title=Constsa.WELLCOME.title;
   body=Constsa.WELLCOME.body;
   footer=Constsa.WELLCOME.footer;
@@ -17,6 +16,7 @@ export class IndextopComponent implements OnInit {
   footerOpton3=Constsa.WELLCOME.footerOption3;
   footerOpton4=Constsa.WELLCOME.footerOption4;
   hability:boolean=false
+
   constructor() { }
 
   ngOnInit(): void {

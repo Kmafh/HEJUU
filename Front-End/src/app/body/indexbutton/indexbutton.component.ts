@@ -9,7 +9,14 @@ import { Constsa } from 'src/app/Constsa';
 export class IndexbuttonComponent implements OnInit {
 
   constructor() { }
-
+  title=Constsa.WELLCOME.title;
+  body=Constsa.WELLCOME.body;
+  footer=Constsa.WELLCOME.footer;
+  footeroption1=Constsa.WELLCOME.footeroption1;
+  footerOpton2=Constsa.WELLCOME.footerOpton2;
+  footerOpton3=Constsa.WELLCOME.footerOption3;
+  footerOpton4=Constsa.WELLCOME.footerOption4;
+  hability:boolean=false
   indextitleoption1=Constsa.INDEXOPTIONS.options1.title;
   indextitleoption2=Constsa.INDEXOPTIONS.options2.title;
   indextitleoption3=Constsa.INDEXOPTIONS.options3.title;
