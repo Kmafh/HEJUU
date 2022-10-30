@@ -17,7 +17,7 @@ public class HejuuApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		String password ="12345";
+		String password ="Eltony1989..";
 		
 		for(int i=0; i< 4; i++)
 		{

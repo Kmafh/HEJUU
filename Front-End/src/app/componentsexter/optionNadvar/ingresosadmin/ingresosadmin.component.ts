@@ -25,7 +25,7 @@ export class IngresosadminComponent implements OnInit {
   nav3title: String=Constsa.NAV_OPTION_INGRESS.options3.title;
   ingreso: Ingreso[] = [];
   paginator: any;
-  algo:boolean=false
+  text:boolean=false;
   ngOnInit(): void {
     
     this.activatedRoute.paramMap.subscribe(params => {

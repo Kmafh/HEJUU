@@ -33,7 +33,6 @@ footer {
 .bg-celest{
   background-color: #00afb2;
   color: #FFFF;
-  background-image: url("./assets/img/fondoingresos.png");
 }
 .bg-pinki{
   background-color: #ffe08c;
@@ -54,6 +53,14 @@ footer {
 
 .boton-orange:hover{
   background-color: #fdae36;
+}
+
+.boton-oscuro{
+  background-color: #0a0e18;
+}
+
+.boton-oscuro:hover{
+  background-color: #0a0e18;
 }
 /*COLORES DE TEXTO */
 

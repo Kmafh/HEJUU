@@ -11,8 +11,9 @@ import swal from 'sweetalert2';
 })
 export class NadvarusertopComponent implements OnInit {
 
-  login: boolean = Constsa.LOGIN;
+  login2: boolean = Constsa.LOGIN;
   User: string = "Kamaflash"
+  sessionmouse:boolean=false
   usuario: Usuario;
   constructor(private authService: AuthService, private router: Router) {
     this.usuario = new Usuario();
@@ -22,17 +23,18 @@ export class NadvarusertopComponent implements OnInit {
     this.usuario = new Usuario();
   }
 
-  sentIn(): void {
+  login(): void {
     console.log(this.usuario);
     if (this.usuario.username == null || this.usuario.password == null) {
       swal('Error Login','Username o password vacías!', 'error');
       return;
     }
-
+    console.log(this.usuario);
     this.authService.login(this.usuario).subscribe(response => {
-      console.log("Response dentro: "+response);
+      console.log("Response dentro: " + response);
       this.router.navigate(['/ingresos']);
       swal('Login',`Bienvenido ${response.username}`,'success');
     })
+    console.log(this.usuario);
   }
 }

@@ -2,10 +2,10 @@
 <div class="row text-end ">
     <div class="col ">
         <ul class="navbar-nav  text">
-            <li class="nav-item" *ngIf="login==false">
-                <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><small>Iniciar Sesión </small><i class="bi bi-people-fill"></i></a>
+            <li class="nav-item" *ngIf="login2==false">
+                <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" (mouseover)="sessionmouse=true" (mouseout)="sessionmouse=false"><small *ngIf="sessionmouse==true">Iniciar Sesión </small><i class="bi bi-people-fill"></i></a>
               </li>
-              <li class="nav-item" *ngIf="login==true">
+              <li class="nav-item" *ngIf="login2==true">
                 <div class=" nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{User}}
@@ -52,7 +52,7 @@
               <p class="text-center"><small><a href="#" class="text-decoration-none text-success">¿Has olvidado tu contraseña?</a></small></p>
             </div>
              <div class="col-sm-10 text-center">
-             <button (click) ="sentIn()" type="submit" class="btn btn-warning container-fluid" value="Login">Iniciar sesión</button>
+             <button (click) ="login()" type="submit" class="btn btn-warning container-fluid" value="Login">Iniciar sesión</button>
              </div>
              
              <div class="col-sm-9">
