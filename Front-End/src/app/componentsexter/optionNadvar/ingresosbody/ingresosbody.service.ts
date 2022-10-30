@@ -15,6 +15,15 @@ export class IngresosbodyService {
   private httpHearders = new HttpHeaders({ 'Content-Type': 'application/json' })
   constructor(private http: HttpClient, private router: Router) { }
 
+  private isNoAutorizado(e): boolean{
+    if(e.status==401 || e.status==403){
+      console.log("No autorizado");
+      this.router.navigate([''])
+      return true;
+    }
+    return false;
+  }
+  
   getIngresos(page:number): Observable<any> {
     return this.http.get(this.urlEndPoint+'/page/'+page)
     .pipe(
@@ -43,6 +52,10 @@ export class IngresosbodyService {
   create(ingreso: Ingreso): Observable<any> {
     return this.http.post<Ingreso>(this.urlEndPoint, ingreso, { headers: this.httpHearders }).pipe(
       catchError(e => {
+
+        if(this.isNoAutorizado(e)){
+          return throwError(e);
+        }
         console.error(e.error.mensaje);
         swal(e.error.mensaje, e.error.error, 'error');
         return throwError(e)
@@ -53,6 +66,9 @@ export class IngresosbodyService {
   getIngreso(id): Observable<Ingreso> {
     return this.http.get<Ingreso>(`${this.urlEndPoint}/${id}`).pipe(
       catchError(e => {
+        if(this.isNoAutorizado(e)){
+          return throwError(e);
+        }
         console.log("Error")
         this.router.navigate(['/ingresos']);
         swal('Error al editar', e.error.mensaje, 'error');
@@ -63,7 +79,11 @@ export class IngresosbodyService {
   update(ingreso: Ingreso): Observable<Ingreso> {
     return this.http.put<Ingreso>(`${this.urlEndPoint}/${ingreso.id}`, ingreso, { headers: this.httpHearders })
       .pipe(
+        
         catchError(e => {
+          if(this.isNoAutorizado(e)){
+            return throwError(e);
+          }
           console.error(e.error.mensaje);
           swal(e.error.mensaje, e.error.error, 'error');
           return throwError(e)
@@ -74,6 +94,9 @@ export class IngresosbodyService {
     return this.http.delete<Ingreso>(`${this.urlEndPoint}/${id}`, { headers: this.httpHearders })
       .pipe(
         catchError(e => {
+          if(this.isNoAutorizado(e)){
+            return throwError(e);
+          }
           console.error(e.error.mensaje);
           swal(e.error.mensaje, e.error.error, 'error');
           return throwError(e)

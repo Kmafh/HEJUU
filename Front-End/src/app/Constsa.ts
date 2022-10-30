@@ -1,6 +1,6 @@
 
 export class Constsa{
-    public static LOGIN:boolean=true;
+    public static LOGIN:boolean=false;
     
     public static WELLCOME = {
         id:1,
