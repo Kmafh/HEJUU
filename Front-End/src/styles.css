@@ -71,11 +71,9 @@ footer {
   background-color: #0a0e18;
 }
 .menuproyectos{
-  font-weight:bold;
 }
 .menuproyectos:hover{
   border-right:4px solid #00afb2;
-  font-weight:bold;
   background-color: #f8f9fa;
   
 }

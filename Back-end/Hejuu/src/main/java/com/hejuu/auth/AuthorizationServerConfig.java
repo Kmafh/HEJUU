@@ -17,45 +17,54 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig  extends AuthorizationServerConfigurerAdapter{
-	
+
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+
 	@Autowired
 	@Qualifier("authenticationManager")
 	private AuthenticationManager authenticationManager;
+
+	@Autowired
+	private InfoAdicionalToken infoAdicionalToken;
+
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		
 		security.tokenKeyAccess("permitAll()")
-		.checkTokenAccess("isAuthenticated()");
+				.checkTokenAccess("isAuthenticated()");
 	}
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		
-		clients.inMemory().withClient("Hejuu")
-		.secret(passwordEncoder.encode("12345"))
-		.scopes("read","write")
-		.authorizedGrantTypes("password","refresh_token")
-		.accessTokenValiditySeconds(3600)
-		.refreshTokenValiditySeconds(3600);
+		clients.inMemory().withClient("angularapp")
+				.secret(passwordEncoder.encode("12345"))
+				.scopes("read", "write")
+				.authorizedGrantTypes("password", "refresh_token")
+				.accessTokenValiditySeconds(3600)
+				.refreshTokenValiditySeconds(3600);
 	}
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+		TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+		tokenEnhancerChain.setTokenEnhancers(Arrays.asList(infoAdicionalToken, accessTokenConverter()));
 
 		endpoints.authenticationManager(authenticationManager)
-		.tokenStore(tokenStore())
-		.accessTokenConverter(accessTokenCoverter());
+				.tokenStore(tokenStore())
+				.accessTokenConverter(accessTokenConverter())
+				.tokenEnhancer(tokenEnhancerChain);
 	}
+
 	@Bean
 	public JwtTokenStore tokenStore() {
-		// TODO Auto-generated method stub
-		return new JwtTokenStore(accessTokenCoverter());
+		return new JwtTokenStore(accessTokenConverter());
 	}
+
 	@Bean
-	public JwtAccessTokenConverter accessTokenCoverter() {
+	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+		jwtAccessTokenConverter.setSigningKey(JwtConfig.RSA_PRIVADA);
+		jwtAccessTokenConverter.setVerifierKey(JwtConfig.RSA_PUBLICA);
 		return jwtAccessTokenConverter;
 	}
 	
