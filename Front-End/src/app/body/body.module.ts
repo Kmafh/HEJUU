@@ -13,6 +13,6 @@ import { CincuentaComponent } from './indexbutton/cincuenta.component';
     CincuentaComponent
   ],
   imports: [ CommonModule ],
-  exports: [ IndextopComponent ]
+  exports: [ IndextopComponent,CincuentaComponent ]
 })
 export class BodyModule { }

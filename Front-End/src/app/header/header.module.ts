@@ -6,6 +6,7 @@ import { NadvarusertopComponent } from './nadvarusertop/nadvarusertop.component'
 import { NadvartopComponent } from './nadvartop/nadvartop.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { BodyModule } from '../body/body.module';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    BodyModule
   ],
   exports:      [ 
     StructmenuComponent, 

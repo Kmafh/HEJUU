@@ -18,7 +18,7 @@
                         <img class="img-fluid d-none d-lg-block" src="../../../assets/img/logo.png">
                             <app-centermenu></app-centermenu>
                     </div>
-                    <div class="collapse navbar-collapse col-3  d-flex flex-row-reverse" id="navbarSupportedContent">   
+                    <div class="collapse navbar-collapse col-3  d-flex flex-row-reverse" id="navbarSupportedContent" >   
                             <a class="boton-orange container-fluid mt-1 rounded text-decoration-none text-center link-light fly border-botton" type="button"  data-bs-toggle="modal" data-bs-target="#consumoModal" ><h6 class="mt-2">Calcular Gasto</h6></a>                
                     </div>
                     <div class="col-1"></div>
@@ -26,3 +26,28 @@
             
     </div>
 </nav>
+
+<div class="modal fade " id="consumoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Consumo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  
+          <!-- Cuerpo del modal, formulario-->
+  
+         <app-cincuenta></app-cincuenta>
+  
+  
+  
+        </div>
+        <hr>
+        <div class="text-center footer">
+  
+              <p>El precio del Kwh utilizado en base a la web (Hoy 0.28€)</p>
+  
+      </div>
+    </div>
+  </div>

@@ -1,18 +1,18 @@
 <div class="row">
   <div class="col-12 mt-2 text-center">C.R.U.D Ingresos</div>
   <div class="col-12 col-md-2 border-end">
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-      <div class="accordion-item ">
+    <div class="accordion accordion-flush text-center" >
+      <div class="accordion-item text ">
         <h2 class="accordion-header" id="flush-headingOne">
-          <button class="accordion-button collapsed bg-white link-secondary text-center" type="button"
+          <button class="btn  bg-white link-secondary text-center rounded" type="button"
             data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
-            aria-controls="flush-collapseOne" (mouseover)="text=true" (mouseout)="text=false">
+            aria-controls="flush-collapseOne">
 
-            <h1><i class="bi bi-bank2"></i></h1>
+            <h3 ><i class="bi bi-plus-circle-fill"></i></h3>
             <h5 *ngIf="text==true">+</h5>
           </button>
         </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse bg-light rounded"
+        <div id="flush-collapseOne" class="accordion-collapse collapse bg-light rounded mb-2"
           aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
             <div class="row">
@@ -27,43 +27,21 @@
         </div>
       </div>
     </div>
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-      <div class="accordion-item ">
-        <h2 class="accordion-header" id="flush-headingOne">
-          <button class="accordion-button collapsed bg-white link-secondary text-center" type="button"
-            data-bs-toggle="collapse" data-bs-target="#flush-collapseOtro" aria-expanded="false"
-            aria-controls="flush-collapseOtro" (mouseover)="text=true" (mouseout)="text=false">
-
-            <h1><i class="bi bi-airplane-fill"></i></h1>
-          </button>
-        </h2>
-        <div id="flush-collapseOtro" class="accordion-collapse collapse bg-light rounded"
-          aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">
-            <div class="row">
-              <div class="col"><a class="nav-link active link-secondary" href="#" data-bs-toggle="modal"
-                  data-bs-target="#fijoModal"><i class="bi bi-pencil-fill"></i></a></div>
-              <div class="col"><a class="nav-link link-secondary" href="#" data-bs-toggle="modal"
-                  data-bs-target="#eventualModal"><i class="bi bi-handbag-fill"></i></a></div>
-              <div class="col"><a class="nav-link link-secondary" href="#" data-bs-toggle="modal"
-                  data-bs-target="#futuroModal"><i class="bi bi-piggy-bank-fill"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="accordion accordion-flush border-top" id="accordionFlushExample">
+      
       <div class="accordion" id="accordionFlushExample">
-      <div class="accordion-item ">
+      <div class="accordion-item text-center">
         <h2 class="accordion-header" id="flush-headingOne">
           <button class="btn  collapsed bg-white link-secondary text-center" type="button"
             data-bs-toggle="collapse" data-bs-target="#flush-collapseDelete" aria-expanded="false"
             aria-controls="flush-collapseDelete" (click)="dell=true">
 
-            <h3><i class="bi bi-trash-fill"></i></h3>
+            <i class="bi bi-trash-fill"></i>
           </button>
           <button class="btn  collapsed bg-white link-secondary text-center" type="button"
             (click) ="refresk()">
 
-            <h3><i class="bi bi-arrow-repeat"></i></h3>
+            <i class="bi bi-arrow-repeat"></i>
           </button>
         </h2>
         <div id="flush-collapseDelete" class="accordion-collapse collapse bg-light rounded"
@@ -80,7 +58,7 @@
     </div>
   </div>
   
-  <div class="col-10 border-start">
+  <div class="col-sm-10 border-start">
     <div *ngIf="upd==true" class="">
 
       <table class="table table-hover" *ngIf="ingreso?.length>0">
@@ -127,7 +105,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ingresos of ingreso" class="text-success" (dblclick)="upd=true">
+        <tr *ngFor="let ingresos of ingreso" class="" (dblclick)="upd=true">
           <td>{{ingresos.subject}}</td>
           <td>{{ingresos.tipe}}</td>
           <td>{{ingresos.cant}}</td>

@@ -13,11 +13,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { ProyectosComponent } from './proyectos/proyectos.component';
+import { PlaneaComponent } from './proyectos/planea.component';
+import { PlaneabodyComponent } from './proyectos/planeabody.component';
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    PlaneaComponent,
+    PlaneabodyComponent
   ],
   imports: [
     BrowserModule,

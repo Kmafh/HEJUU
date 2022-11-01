@@ -35,7 +35,7 @@ footer {
   color: #FFFF;
 }
 .bg-pinki{
-  background-color: #ffe08c;
+  background-color: #0a0e18;
   color: #D6680B;
 }
 
@@ -62,11 +62,34 @@ footer {
 .boton-oscuro:hover{
   background-color: #0a0e18;
 }
+.menuproyectos{
+  font-weight:bold;
+}
+.menuproyectos:hover{
+  border-right:4px solid #00afb2;
+  font-weight:bold;
+  background-color: #f8f9fa;
+  
+}
 /*COLORES DE TEXTO */
 
 .text-gris{
   color: #737373
 }
+.text-celeste{
+  color: #00afb2
+}
+.text-celeste:hover{
+  color: #00afb2
+}
+/*   BORDER  */
+.fly{
+  box-shadow: 0px 0px 5px 1px rgb(197, 197, 197);
+}
+
+
+
+
 
 
 
