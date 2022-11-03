@@ -18,6 +18,7 @@ export class IngresosbodyService {
   private isNoAutorizado(e): boolean{
     if(e.status==401 || e.status==403){
       console.log("No autorizado");
+      swal("No autorizado", 'Debes estar logueado.');
       this.router.navigate([''])
       return true;
     }
